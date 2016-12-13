@@ -1,0 +1,137 @@
+<html>
+	<head>
+		<title>Test</title>
+	</head>
+	<script>
+
+		function loadGraphics() {
+			var urlBase = 'http://quotes.enfoque.com.br:8080/chartonegif_or_applet?userId=99999&corretoraId=FOLHAINVEST&NomeAtivo=%mark%&BDesenha=Atualizar&Compara=&TipoDeGrafico=Diario&NumBarras=66&periodicidade=D&Estilo=enfoque&CandleBar=Candle&View=Imagem'
+
+			var companies = [
+				'ABEV3',
+				'ALSC3',
+				'ANIM3',
+				'BBAS3',
+				'BBDC3',
+				'BBDC4',
+				'BBSE3',
+				'BEEF3',
+				'BRAP4',
+				'BRFS3',
+				'BRKM5',
+				'BRML3',
+				'BRPR3',
+				'BRSR6',
+				'BTOW3',
+				'BVMF3',
+				'CCRO3',
+				'CESP6',
+				'CIEL3',
+				'CMIG4',
+				'CPFE3',
+				'CPLE6',
+				'CSAN3',
+				'CSNA3',
+				'CTIP3',
+				'CYRE3',
+				'DTEX3',
+				'ECOR3',
+				'ELET3',
+				'ELET6',
+				'ELPL4',
+				'EMBR3',
+				'ENBR3',
+				'EQTL3',
+				'ESTC3',
+				'EVEN3',
+				'EZTC3',
+				'FIBR3',
+				'GFSA3',
+				'GGBR4',
+				'GOAU4',
+				'GOLL4',
+				'GRND3',
+				'HGTX3',
+				'HYPE3',
+				'IGTA3',
+				'ITSA4',
+				'ITUB4',
+				'JBSS3',
+				'KLBN11',
+				'KROT3',
+				'LAME3',
+				'LAME4',
+				'LIGT3',
+				'LINX3',
+				'LREN3',
+				'MDIA3',
+				'MGLU3',
+				'MPLU3',
+				'MRFG3',
+				'MRVE3',
+				'MULT3',
+				'MYPK3',
+				'NATU3',
+				'ODPV3',
+				'PCAR4',
+				'PDGR3',
+				'PETR3',
+				'PETR4',
+				'POMO4',
+				'PSSA3',
+				'QGEP3',
+				'QUAL3',
+				'RADL3',
+				'RAPT4',
+				'RENT3',
+				'RUMO3',
+				'SANB11',
+				'SBSP3',
+				'SEER3',
+				'SMLE3',
+				'SMTO3',
+				'SULA11',
+				'SUZB5',
+				'TAEE11',
+				'TBLE3',
+				'TIET11',
+				'TIMP3',
+				'TOTS3',
+				'TRPL4',
+				'UGPA3',
+				'USIM5',
+				'VALE3',
+				'VALE5',
+				'VIVT4',
+				'VLID3',
+				'VVAR11',
+				'WEGE3',
+			]
+			
+			var container = document.getElementById('container');
+			for (var i = 0; i < companies.length; i++) {
+				var urlReplaced = urlBase.replace('%mark%', companies[i]);
+				
+				var newDiv = document.createElement('div');
+				var newText = document.createElement('p');
+				var text = document.createTextNode(companies[i]);
+				newText.appendChild(text);
+				
+				newDiv.appendChild(newText);
+				
+				var newImage = document.createElement('img');
+				newImage.setAttribute('src', urlReplaced);
+				
+				newDiv.appendChild(newImage);
+				
+				container.appendChild(newDiv);
+			}
+		}
+
+	</script>
+	<body onload="loadGraphics()">
+		<div id="container">
+		
+		</div>
+	</body>
+</html>
